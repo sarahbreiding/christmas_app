@@ -17,10 +17,10 @@
     <div class="row">
       <% person.gifts.each do |gift| %>
         <%= form_for([person, gift]) do |f| %>
-          <div class="col-xs-3 edit-form">
+          <div class="col-xs-7 edit-form">
             <%= f.text_field :name %>
           </div>
-          <div class="col-xs-4 edit-form" >
+          <div class="col-xs-7 edit-form" >
             <%= f.text_field :location %>
           </div>
           <div class="col-xs-1 edit-form">
@@ -29,7 +29,7 @@
           <div class="col-xs-2">
             <%= f.submit "Save" %>
           </div>
-          <div class="col-xs-1">
+          <div class="col-xs-2">
             <%= link_to image_tag("delete.png"), [gift.person, gift], method: :delete, data: { confirm: "Are you sure?" } %>
           </div>
         <% end %>
@@ -48,8 +48,8 @@
           <%= f.text_field :location %>
         </div>
         <div class="form-group">
-          <%= f.label :status %>
-          <%= f.text_field :status %>
+          <%= f.label :purchased %>
+          <%= f.check_box :status %>
         </div>
         <%= f.submit "Submit" %>
       <% end %>
