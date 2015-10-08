@@ -1,0 +1,15 @@
+<div class="add-new">
+  <%= form_for(@person) do |f| %>
+    <fieldset>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </fieldset>
+    <fieldset>
+        <%= f.label :ideas %>
+        <%= f.text_area :ideas %>
+    </fieldset>
+    <fieldset>
+        <%= f.submit "Submit" %>
+    </fieldset>
+  <% end %>
+</div>

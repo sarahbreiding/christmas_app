@@ -1,0 +1,73 @@
+<div class="container">
+<h1>Christmas Gifts</h1>
+<!--persons list-->
+  <% @persons.each do |person| %>
+    <div class="row">
+      <div class="col-xs-12"><h3><%= person.name %>   <%= link_to image_tag("delete.png"), person, method: :delete, data: {confirm: "Are you sure?"} %></h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2"><strong>Ideas:</strong></div>
+      <div class="col-xs-10"><%= person.ideas %></div>
+    </div>
+<!-- gifts list -->
+    <div class="row">
+      <div class="col-xs-2"><strong>Gifts:</strong></div>
+    </div>
+    <div class="row">
+      <% person.gifts.each do |gift| %>
+        <%= form_for([person, gift]) do |f| %>
+          <div class="col-xs-3 edit-form">
+            <%= f.text_field :name %>
+          </div>
+          <div class="col-xs-4 edit-form" >
+            <%= f.text_field :location %>
+          </div>
+          <div class="col-xs-1 edit-form">
+            <%= f.check_box :status %>
+          </div>
+          <div class="col-xs-2">
+            <%= f.submit "Save" %>
+          </div>
+          <div class="col-xs-1">
+            <%= link_to image_tag("delete.png"), [gift.person, gift], method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+<!--add new gift form-->
+    <h3><small><a href="#" class="toggle">Add gift</a></small></h3>
+      <div class="gift-form">
+      <%= form_for([person, person.gifts.build]) do |f| %>
+        <div class="form-group">
+          <%= f.label :gift %>
+          <%= f.text_field :name %>
+        </div>
+        <div class="form-group">
+          <%= f.label :location %>
+          <%= f.text_field :location %>
+        </div>
+        <div class="form-group">
+          <%= f.label :status %>
+          <%= f.text_field :status %>
+        </div>
+        <%= f.submit "Submit" %>
+      <% end %>
+    </div>
+    <% end %>
+<!--add new person form-->
+  <h2><small><a href="#" class="toggle">Add new person</a></small></h2>
+    <div class="gift-form">
+      <%= form_for(@person) do |f| %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </div>
+        <div class="form-group">
+          <%= f.label :ideas %>
+          <%= f.text_area :ideas %>
+        </div>
+          <%= f.submit "Submit" %>
+      <% end %>
+    </div>
+</div>
