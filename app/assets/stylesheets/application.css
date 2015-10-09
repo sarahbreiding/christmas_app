@@ -38,3 +38,11 @@ input[type=submit] {
   border: none;
 }
 
+.edit-form textarea {
+  width: 95%;
+  resize: none;
+  border: none;
+}
+
+
+
