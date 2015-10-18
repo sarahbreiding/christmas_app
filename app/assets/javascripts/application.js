@@ -24,4 +24,11 @@ $(document).ready(function(){
     $(this).closest('h2').next().slideToggle();
   });
 
+$('.idea-textarea').keydown(function(event){
+  if(event.keyCode === 13) {
+    this.form.submit();
+    return false;
+  }
+});
+
 });

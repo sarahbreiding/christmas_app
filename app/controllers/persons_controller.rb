@@ -25,7 +25,7 @@ class PersonsController < ApplicationController
   def update
     @person = Person.find(params[:id])
     if @person.update_attributes(person_params)
-      redirect_to @item
+      redirect_to persons_url(@person)
     else
       render 'edit'
     end
