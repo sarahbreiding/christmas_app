@@ -16,9 +16,9 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $(".gift-form").hide();
+  $('.gift-form').hide();
 
-  $(".toggle").click(function(e){
+  $('.toggle').click(function(e){
     e.preventDefault();
     $(this).closest('h3').next().slideToggle();
     $(this).closest('h2').next().slideToggle();
@@ -30,5 +30,8 @@ $('.idea-textarea').keydown(function(event){
     return false;
   }
 });
+
+$('.completed').hide();
+$('.completed').parent().siblings('div, h3').hide();
 
 });

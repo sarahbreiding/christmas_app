@@ -42,7 +42,7 @@ class PersonsController < ApplicationController
 
   private
     def person_params
-      params.require(:person).permit(:name, :ideas, :gift_id)
+      params.require(:person).permit(:name, :ideas, :status, :gift_id)
     end
 
 end

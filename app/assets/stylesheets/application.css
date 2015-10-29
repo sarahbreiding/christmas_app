@@ -44,5 +44,23 @@ input[type=submit] {
   border: none;
 }
 
+.person-data {
+  display: inline-block;
+}
+
+.person-data h3 {
+  display: inline-block;
+}
+
+.person-data div {
+  display: inline-block;
+  padding: 2%;
+}
+
+
+.hidden-save-button {
+  visibility: hidden;
+}
+
 
 
