@@ -62,5 +62,7 @@ input[type=submit] {
   visibility: hidden;
 }
 
-
+.completed .ideas, .completed .gifts-title, .completed .gifts, .completed .add-gift-title {
+  display: none;
+}
 

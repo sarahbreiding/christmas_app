@@ -4,22 +4,24 @@
   <% @persons.each do |person| %>
   <div class="<%= person.status? ? 'completed' : ' ' %>">
     <%= form_for([person]) do |f| %>
-      <div class="row person-data col-xs-12" >
-        <h3><%= person.name %></h3>
-        <div><%= f.check_box :status %></div>
-        <div><%= link_to image_tag("delete.png"), person, method: :delete, data: {confirm: "Are you sure?"} %></div>
-        <div class="hidden-save-button"><%= f.submit "Save" %></div>
-      </div>
       <div class="row">
+        <div class="col-xs-12 person-data">
+          <h3><%= person.name %></h3>
+          <div><%= f.check_box :status %></div>
+          <div><%= link_to image_tag("delete.png"), person, method: :delete, data: {confirm: "Are you sure?"} %></div>
+          <div class="hidden-save-button"><%= f.submit "Save" %></div>
+        </div>
+      </div>
+      <div class="row ideas">
         <div class="col-xs-2"><strong>Ideas:</strong></div>
         <div class="col-xs-10 edit-form"><%= f.text_area :ideas, class: "idea-textarea" %></div>
       </div>
     <% end %>
 <!-- gifts list -->
-    <div class="row">
+    <div class="row gifts-title">
       <div class="col-xs-2"><strong>Gifts:</strong></div>
     </div>
-    <div class="row">
+    <div class="row gifts">
       <% person.gifts.each do |gift| %>
         <%= form_for([person, gift]) do |f| %>
           <div class="col-xs-4 edit-form">
@@ -42,8 +44,7 @@
       <% end %>
     </div>
 <!--add new gift form-->
-    <h3><small><a href="#" class="toggle">Add gift</a></small></h3>
-    </div>
+    <h3 class="add-gift-title"><small><a href="#" class="toggle">Add gift</a></small></h3>
     <div class="gift-form">
       <%= form_for([person, person.gifts.build]) do |f| %>
         <div class="form-group">
@@ -61,6 +62,7 @@
         <%= f.submit "Submit" %>
       <% end %>
     </div>
+  </div>
   <% end %>
 <!--add new person form-->
   <h2><small><a href="#" class="toggle">Add new person</a></small></h2>

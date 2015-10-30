@@ -24,16 +24,11 @@ $(document).ready(function(){
     $(this).closest('h2').next().slideToggle();
   });
 
-$('.idea-textarea').keydown(function(event){
-  if(event.keyCode === 13) {
-    this.form.submit();
-    return false;
-  }
-});
-
-
- $('.completed .person-data').parent().siblings().hide();
- $('.completed .person-data').siblings().hide();
-
+  $('.idea-textarea').keydown(function(event){
+    if(event.keyCode === 13) {
+      this.form.submit();
+      return false;
+    }
+  });
 
 });
