@@ -31,7 +31,9 @@ $('.idea-textarea').keydown(function(event){
   }
 });
 
-$('.completed').hide();
-$('.completed').parent().siblings('div, h3').hide();
+
+ $('.completed .person-data').parent().siblings().hide();
+ $('.completed .person-data').siblings().hide();
+
 
 });
