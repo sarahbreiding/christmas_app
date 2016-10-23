@@ -1,0 +1,10 @@
+<div class="container">
+<!--person-->
+<a href="http://christmasapp.herokuapp.com/">Back</a>
+  <h3>Christmas Gift Record for <%= @person.name %></h3>
+<!-- gifts list -->
+  <div><strong>Gifts:</strong></div>
+      <% @person.gifts.archived.each do |gift| %>
+        <div><%= gift.name %></div>
+      <% end %>
+</div>
