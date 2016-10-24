@@ -40,8 +40,8 @@
             <%= link_to image_tag("delete.png"), [gift.person, gift], method: :delete, data: { confirm: "Are you sure?" } %>
           </div>
           <div class="col-xs-2">
-            <%= f.hidden_field :archive, value:true %>
-            <%= f.submit 'Archive'%>
+            <!--<%= f.hidden_field :archive, value:true %>-->
+            <p>Archive? <%= f.check_box :archive %>
           </div>
           <div style="clear: both;"></div>
         <% end %>
