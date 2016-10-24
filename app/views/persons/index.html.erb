@@ -19,7 +19,8 @@
     <% end %>
 <!-- gifts list -->
     <div class="row gifts-title">
-      <div class="col-xs-2"><strong>Gifts:</strong></div>
+      <div class="col-xs-6"><strong>Gifts:</strong></div>
+      <div class="col-xs-1"><strong>Purchased:</strong></div>
     </div>
     <div class="row gifts">
       <% person.gifts.unarchived.each do |gift| %>
@@ -40,7 +41,7 @@
             <%= link_to image_tag("delete.png"), [gift.person, gift], method: :delete, data: { confirm: "Are you sure?" } %>
           </div>
           <div class="col-xs-2">
-            <p>Archive? <%= f.check_box :archive %>
+            <div><%= f.check_box :archive %> Archive</div>
           </div>
           <div style="clear: both;"></div>
         <% end %>
